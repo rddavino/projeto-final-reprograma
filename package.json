@@ -1,0 +1,26 @@
+{
+  "name": "projeto-final-reprograma",
+  "version": "1.0.0",
+  "description": "Projeto final reprograma",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rddavino/projeto-final-reprograma.git"
+  },
+  "keywords": [
+    "javascript",
+    "jest"
+  ],
+  "author": "Raquel Davino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rddavino/projeto-final-reprograma/issues"
+  },
+  "homepage": "https://github.com/rddavino/projeto-final-reprograma#readme",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
