@@ -1,4 +1,4 @@
-const { } = require('./usuaria');
+const { } = require('./mentora');
 
 describe("Descricao", () => {
 
