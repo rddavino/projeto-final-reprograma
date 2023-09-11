@@ -1,8 +1,10 @@
-class Mentoria {
-  
-    constructor(nome, descricaoPessoal, email) {
-        
-    }
+class Mentoria extends Evento {
+    mentora;
+    mentorada;
+
+    constructor(urlSalaVirtual, diaSemana, horario) {
+        super(urlSalaVirtual, diaSemana, horario);
+    } 
 
 
 }

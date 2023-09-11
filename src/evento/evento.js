@@ -2,7 +2,6 @@ class Evento {
     urlSalaVirtual; 
     listaDiaSemana;
     horario;
-    #listaParticipantes;
 
     static eventosCriados;
   
@@ -11,10 +10,6 @@ class Evento {
         this.listaDiaSemana.push(diaSemana);
         this.horario = horario;
         Evento.eventosCriados.push(this);
-    }
-
-    get participantes() {
-        //to do
     }
 
     editarDiaSemana(novoDia) {
@@ -33,9 +28,7 @@ class Evento {
         //to do
     }
 
-    incluirParticipante(participante) {
-        //to do
-    }
+  
   
 
 }
