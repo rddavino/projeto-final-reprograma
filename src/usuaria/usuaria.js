@@ -1,5 +1,4 @@
-const Mentoria = require('../mentoria/mentoria');
-
+const {Mentoria} = require('../mentoria/mentoria');
 
 class Usuaria {
     nome;
@@ -10,7 +9,6 @@ class Usuaria {
     diponivelParaMentoria;
     mentoria;
     mentorasDisponiveis;
-
     static usuariasCriadas = [];
 
     constructor(nome, descricaoPessoal, email, diponivelParaMentoria) {
@@ -22,7 +20,10 @@ class Usuaria {
         this.listaInteresses = [];
         this.mentorasDisponiveis = [];
         this.mentoria = null;
-        Usuaria.usuariasCriadas.push(this);
+        Usuaria.usuariasCriadas.push({
+            nome: this.nome,
+            email: this.email
+        });
     }
 
 
@@ -83,7 +84,16 @@ class Usuaria {
     }
 
     iniciarMentoria(url, dias, horario, mentora, mentorada) {
-        this.mentoria = new Mentoria(url, dias, horario, mentora, mentorada);
+        let mentoradaAuxiliar = {
+            nome: mentorada.nome,
+            email: mentorada.email
+        }
+
+        let mentoraAuxiliar = {
+            nome: mentora.nome,
+            email: mentora.email
+        }
+        this.mentoria = new Mentoria(url, dias, horario, mentoraAuxiliar, mentoradaAuxiliar);
     }
 
     finalizarMentoria() {
@@ -119,11 +129,12 @@ raquel.incluirConhecimento("javascript");
 
 thayssa.listarMentoras("javascript")
 
-laissa.excluirUsuaria();
-console.log("usuarias:", Usuaria.usuariasCriadas);
+// laissa.excluirUsuaria();
+// console.log("usuarias:", Usuaria.usuariasCriadas);
 
 raquel.iniciarMentoria("meet.com", "segunda", "5:30", raquel, thayssa);
 
+console.log("==================")
 console.log(raquel)
 
-module.exports = { Usuaria }
+module.exports = {Usuaria};

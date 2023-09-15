@@ -1,6 +1,6 @@
 class Evento {
     urlSalaVirtual; 
-    listaDiaSemana;
+    listaDiaSemana = [];
     horario;
 
     static eventosCriados = [];
@@ -41,4 +41,4 @@ class Evento {
     }
 }
 
-module.exports = { Evento }
+module.exports = {Evento};

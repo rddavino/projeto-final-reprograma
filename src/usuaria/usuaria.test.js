@@ -8,7 +8,6 @@ describe("Verifica módulo Usuária", () => {
         usuaria1 = new Usuaria("Thayssa", "É legal e ajuda a fazer testes", "thayssa@email.com");
     });
 
-    
     describe("Verifica o método incluirConhecimento", () => {
         it("deveria incluir o conhecimento passado por parâmetro na lista de conhecimentos da usuária", () => {
             let conhecimento = "testes com jest";
@@ -24,16 +23,6 @@ describe("Verifica módulo Usuária", () => {
             expect(usuaria1.excluirConhecimento).not.toContain(conhecimento);
         });
     });
-
-     // describe("Verifica o método buscarConhecimento", () => {
-    //     it("deveria percorrer lista de conhecimento e retornar true caso encontre o conhecimento informado por parâmetro na função.", () => {
-    //         expect().toBeTruthy()
-    //     });
-
-    // it("deveria percorrer lista de conhecimento e retornar false caso não encontre o conhecimento informado por parâmetro na função.", () => {
-        //         expect().toBeFalsy()
-        //     });
-    // });
 
     describe("Verifica o método incluirInteresse", () => {
         it("deveria incluir o interesse passado por parâmetro na lista de interesses da usuária", () => {
@@ -51,50 +40,22 @@ describe("Verifica módulo Usuária", () => {
         });
     });
 
-    // describe("Verifica o método editarDescricao", () => {
-    //     it("deveria modificar a descrição pela descrição informada por parâmetro na função", () => {
-    //         expect().toEqual()
-    //     });
-    // });
-
-    // describe("Verifica o método ficarDisponivelParaMentoria", () => {
-    //     it("deveria atribuir ao atributo disponivelParamentoria o valor true", () => {
-    //         expect().toEqual()
-    //     });
-    // });
-
     describe("Verifica o método listarMentoria", () => {
         it("deveria exibir uma lista de mentoras disponíveis para um assunto de interesse específico informado por parâmetro na função ", () => {
             let interesse = "liderança"
 
-            let usuaria2 = new Usuaria("Raquel", "Gosta de front-end", "raquel@email.com");
+            let usuaria2 = new Usuaria("Raquel", "Gosta de front-end", "raquel@email.com", true);
             usuaria2.incluirConhecimento(interesse)
-            usuaria2.editarDisponibilidadeParaMentoria();
 
-            let usuaria3 = new Usuaria("Maria", "Gosta de backend", "maria@email.com")
-            usuaria3.editarDisponibilidadeParaMentoria();
-            resultado = ['Raquel'];
+            let usuaria3 = new Usuaria("Maria", "Gosta de backend", "maria@email.com", true)
+            usuaria3.incluirConhecimento("POO")
 
-            expect(usuaria1.listarMentoras(interesse)).toBe(resultado)
+            resultado = [usuaria2];
+            usuaria1.listarMentoras(interesse);
+
+            expect(usuaria1.mentorasDisponiveis).toEqual(expect.arrayContaining([{ nome: "Raquel" }]));
         });
 
     });
-
-    // describe("Verifica o método iniciarMentoria", () => {
-    //     it("deveria ...", () => {
-    //         expect().toEqual()
-    //     });
-    // });
-
-    // describe("Verifica o método finalizarMentoria", () => {
-    //     it("deveria ...", () => {
-    //         expect().toEqual()
-    //     });
-    // });
-
-    // describe("Verifica o método excluirUsuaria", () => {
-    //     it("deveria remover a usuária da lista de usuárias criadas.", () => {
-    //         expect().toEqual()
-    //     });
-    // });
+  
 })

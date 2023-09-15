@@ -1,4 +1,4 @@
-const Evento = require('../evento/evento');
+const {Evento} = require('../evento/evento');
 
 class Mentoria extends Evento {
     mentora;
@@ -11,4 +11,4 @@ class Mentoria extends Evento {
     } 
 }
 
-module.exports = { Mentoria }
+module.exports = {Mentoria};
