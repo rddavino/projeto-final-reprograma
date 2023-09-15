@@ -3,7 +3,7 @@ class Evento {
     listaDiaSemana;
     horario;
 
-    static eventosCriados;
+    static eventosCriados = [];
   
     constructor(urlSalaVirtual, diaSemana, horario) {
         this.urlSalaVirtual = urlSalaVirtual; 
@@ -13,24 +13,32 @@ class Evento {
     }
 
     editarDiaSemana(novoDia) {
-        //to do
+        if(this.listaDiaSemana.some(dia => dia === novoDia)) {
+            dia = novoDia
+        } else {
+            this.listaDiaSemana.push(dia);
+        }
     }
 
     editarHorario(novoHorario) {
-        //to do
+        this.horario = novoHorario;
     }
 
     editarSalaVirtual(novaSala) {
-        //to do
+        this.urlSalaVirtual = novaSala;
     }
 
-    excluirEvento(evento) {
-        //to do
+    excluirEvento() {
+        const indice = Evento.eventosCriados.indexOf(this);
+        if (indice !== -1) {
+            Evento.eventosCriados.splice(indice, 1);
+            console.log(`Evento removido.`);
+            return true;
+        } else {
+            console.error(`Evento não encontrado.`);
+            return false;
+        }
     }
-
-  
-  
-
 }
 
 module.exports = { Evento }
