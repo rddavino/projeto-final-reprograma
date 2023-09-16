@@ -4,7 +4,9 @@
   "description": "Projeto final reprograma",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+
   },
   "repository": {
     "type": "git",

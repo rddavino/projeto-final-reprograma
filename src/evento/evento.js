@@ -12,11 +12,25 @@ class Evento {
         Evento.eventosCriados.push(this);
     }
 
-    editarDiaSemana(novoDia) {
+    incluirDiaSemana(novoDia) {
         if(this.listaDiaSemana.some(dia => dia === novoDia)) {
-            dia = novoDia
+            console.log("Dia da semana já registrado");
+            return false;
         } else {
-            this.listaDiaSemana.push(dia);
+            this.listaDiaSemana.push(novoDia);
+            return true;
+        }
+    }
+
+    excluirDiaSemana(diaParaRemover) {
+        const indice = this.listaDiaSemana.indexOf(diaParaRemover);
+        if (indice !== -1) {
+            this.listaDiaSemana.splice(indice, 1);
+            console.log(`Dia removido.`);
+            return true;
+        } else {
+            console.error(`Dia não encontrado.`);
+            return false;
         }
     }
 

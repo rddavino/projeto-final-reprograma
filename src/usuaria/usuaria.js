@@ -78,8 +78,10 @@ class Usuaria {
         
         if(this.mentorasDisponiveis == []) {
             console.log("Nenhuma mentora disponível para o interesse informado");
+            return false;
         } else {
             console.log(`Resultado da busca por ${interesse}: ${this.mentorasDisponiveis}`);
+            return true;
         }
     }
 
@@ -112,29 +114,5 @@ class Usuaria {
         }
     }
 }
-
-let thayssa = new Usuaria("Thayssa", "Posso ajudar com testes em Jest", "thayssa@email.com", false);
-thayssa.incluirConhecimento("testes com jest");
-
-let raquel = new Usuaria("Raquel", "Gosta de front-end", "raquel@email.com", true);
-raquel.incluirConhecimento("javascript");
-
-// let elvira = new Usuaria("Elvira", "Olá!", "elvira@email.com", true);
-// elvira.incluirConhecimento("javascript")
-
-
-// let laissa = new Usuaria("Laíssa", "Te ajudo com Linkedin!", "laissa@email.com", false)
-// laissa.editarDisponibilidadeParaMentoria();
-
-
-thayssa.listarMentoras("javascript")
-
-// laissa.excluirUsuaria();
-// console.log("usuarias:", Usuaria.usuariasCriadas);
-
-raquel.iniciarMentoria("meet.com", "segunda", "5:30", raquel, thayssa);
-
-console.log("==================")
-console.log(raquel)
 
 module.exports = {Usuaria};

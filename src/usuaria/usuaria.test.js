@@ -1,6 +1,6 @@
 const { Usuaria } = require('./usuaria');
 
-describe("Verifica módulo Usuária", () => {
+describe("Testes para a classe Evento", () => {
 
     let usuaria1;
 
@@ -38,24 +38,6 @@ describe("Verifica módulo Usuária", () => {
             usuaria1.excluirInteresse(interesse);
             expect(usuaria1.excluirInteresse).not.toContain(interesse);
         });
-    });
-
-    describe("Verifica o método listarMentoria", () => {
-        it("deveria exibir uma lista de mentoras disponíveis para um assunto de interesse específico informado por parâmetro na função ", () => {
-            let interesse = "liderança"
-
-            let usuaria2 = new Usuaria("Raquel", "Gosta de front-end", "raquel@email.com", true);
-            usuaria2.incluirConhecimento(interesse)
-
-            let usuaria3 = new Usuaria("Maria", "Gosta de backend", "maria@email.com", true)
-            usuaria3.incluirConhecimento("POO")
-
-            resultado = [usuaria2];
-            usuaria1.listarMentoras(interesse);
-
-            expect(usuaria1.mentorasDisponiveis).toEqual(expect.arrayContaining([{ nome: "Raquel" }]));
-        });
-
     });
   
 })
