@@ -25,11 +25,12 @@
   </ul>
 </p>
 
-</p>
+<br>
 <a href="www.reprograma.com.br">O que é a {reprograma}?</a>
 <br>
 A {reprograma} é uma iniciativa de impacto social, fundada em 2016, e tem como missão diminuir a lacuna de gênero no setor de Tecnologia e trazer mais diversidade para a área.
 
+<br>
 <a href="https://reprograma.com.br/curso-imersao-javascript/">
 <br>
 O que é a Imersão JavaScript?</a>
